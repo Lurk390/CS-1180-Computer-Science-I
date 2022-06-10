@@ -11,8 +11,7 @@ public class CreditCardValidation {
             try {
                 correct = true;
                 creditCardInput = input.nextLong();
-                if (!(String.valueOf(creditCardInput).length() >= 13
-                        && String.valueOf(creditCardInput).length() <= 16)) {
+                if (!(String.valueOf(creditCardInput).length() >= 13 && String.valueOf(creditCardInput).length() <= 16)) {
                     System.out.println("Invalid input. Please enter an integer between 13 and 16 characters long.");
                     correct = false;
                 }
