@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class PrimeNumbers {
+public class HW5_PrimeNumbers {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         boolean correct = false;

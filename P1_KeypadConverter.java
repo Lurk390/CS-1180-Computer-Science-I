@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class KeypadConverter {
+public class P1_KeypadConverter {
 
     public static int getNumber(char letter) {
         if (letter == 'A' || letter == 'B' || letter == 'C') {
@@ -75,7 +75,7 @@ public class KeypadConverter {
             System.out.println("Invalid input. Please only enter letters.");
             wordCheck = input.next();
         }
-        
+
         String word = wordCheck;
         String uppercaseWord = word.toUpperCase();
         for (int i = 0; i < uppercaseWord.length(); i++) {

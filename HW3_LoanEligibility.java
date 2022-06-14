@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class LoanEligibility {
+public class HW3_LoanEligibility {
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
 

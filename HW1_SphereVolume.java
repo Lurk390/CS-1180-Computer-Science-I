@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
-public class SphereVolume {
+public class HW1_SphereVolume {
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
     System.out.print("Enter the radius of the sphere: ");

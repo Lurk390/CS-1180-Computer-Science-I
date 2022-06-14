@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class CreditCardValidation {
+public class P2_CreditCardValidation {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         long creditCardInput = 0;

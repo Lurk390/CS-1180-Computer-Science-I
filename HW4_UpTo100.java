@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class UpTo100 {
+public class HW4_UpTo100 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int sum = 0;
@@ -17,7 +17,8 @@ public class UpTo100 {
             }
         }
 
-        System.out.println("You have entered " + (count - 1) + " values before the total was greater than or equal to 100.");
+        System.out.println(
+                "You have entered " + (count - 1) + " values before the total was greater than or equal to 100.");
         input.close();
     }
 }

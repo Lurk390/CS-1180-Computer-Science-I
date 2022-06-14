@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class HowManyGames {
+public class HW2_HowManyGames {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("How many people are playing? ");
