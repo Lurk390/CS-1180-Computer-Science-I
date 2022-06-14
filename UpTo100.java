@@ -6,7 +6,7 @@ public class UpTo100 {
         int sum = 0;
         int count = 0;
 
-        while (sum < 100) {
+        while (sum <= 100) {
             System.out.print("Enter a number: ");
             if (input.hasNextInt()) {
                 sum += input.nextInt();
@@ -17,7 +17,7 @@ public class UpTo100 {
             }
         }
 
-        System.out.println("You have entered " + (count - 1) + " values before the total was greater than 100.");
+        System.out.println("You have entered " + (count - 1) + " values before the total was greater than or equal to 100.");
         input.close();
     }
 }
