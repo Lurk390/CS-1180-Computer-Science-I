@@ -3,21 +3,80 @@ import java.util.*;
 public class HW6_HollowShapes {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.print("Enter the size of the square(or radius of circle): ");
+
+        // Prompt for shape input
+        System.out.print("Please choose a shape (1 for square, 2 for circle, 3 for triangle): ");
+        int shape = input.nextInt();
+
+        // Check for valid shape input else reprompt
+        while (!(shape == 1 || shape == 2 || shape == 3)) {
+            System.out.print("Invalid input. Please enter 1, 2, or 3: ");
+            shape = input.nextInt();
+        }
+
+        // Check for valid size input else reprompt
+        System.out.print("Enter the size of the shape (or radius of circle): ");
+        while (!input.hasNextInt()) {
+            System.out.print("Invalid input. Please enter an integer: ");
+            input.next();
+          }
         int size = input.nextInt();
+        
+        // Prompt for character input
         System.out.print("Enter the character to be used: ");
         char character = input.next().charAt(0);
         input.close();
-        System.out.println();
-        System.out.println("The hollow square is:");
-        System.out.println();
-        printHollowSquare(size, character);
+
+        // Print the shape chosen
+        if (shape == 1) {
+            System.out.println("The hollow square is:");
+            System.out.println();
+            printHollowSquare(size, character);
+        } else if (shape == 2) {
+            System.out.println("The hollow circle is:");
+            System.out.println();
+            printHollowCircle(size, character);
+        } else if (shape == 3) {
+            System.out.println("The hollow triangle is:");
+            System.out.println();
+            printHollowTriangle(size, character);
+        }
     }
 
     public static void printHollowSquare(int size, char character) {
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                if (i == 0 || j == 0 || i == size - 1 || j == size - 1) {
+        for (int x = 0; x < size; x++) { // rows
+            for (int y = 0; y < size; y++) { // columns
+                if (x == 0 || y == 0 || x == size - 1 || y == size - 1) { // first row || first column || last row || last column
+                    System.out.print(character);
+                } else { // hollow part
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        } 
+    }
+
+    public static void printHollowCircle(int size, char character) {
+        int diameter = size * 2;
+
+        for (int x = 0; x <= diameter; x++) { // rows
+            for (int y = 0; y <= diameter; y++) { // columns
+                double distance = Math.sqrt((x - size) * (x - size) + (y - size) * (y - size));
+
+                if (distance > size - 0.5 && distance < size + 0.5) { // check if distance is within (radius - 0.5) and (radius + 0.5)
+                    System.out.print(character);
+                } else { // hollow part
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        } 
+    }
+
+    public static void printHollowTriangle(int size, char character) {
+        for (int x = 1; x <= size; x++) { // rows
+            for (int y = 1; y <= x; y++) { // columns
+                if (y == 1 || y == x || x == size) {
                     System.out.print(character);
                 } else {
                     System.out.print(" ");
@@ -29,16 +88,14 @@ public class HW6_HollowShapes {
 }
 
 /*
-Write a method that outputs a hollow square. It must take the length of a
-side (Integer) and the
-character to draw the square with (Character). The method must output a
-hollow square of height
-“length” using the given character. You must use a method to do this – if you
-write the code in main,
+Write a method that outputs a hollow square. It must take the length of a side (Integer) and the
+character to draw the square with (Character). The method must output a hollow square of height
+“length” using the given character. You must use a method to do this – if you write the code in main,
 you will not receive credit.
+
 Enter Height: 5
 Enter Character: o
-ooooo 
+ooooo
 o   o
 o   o
 o   o
