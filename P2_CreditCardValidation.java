@@ -4,22 +4,21 @@ public class P2_CreditCardValidation {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         long creditCardInput = 0;
-        boolean correct = false;
+        boolean exitLoop = false;
 
         // Checks that input is an integer of correct length else reprompt
-        while (!correct) {
+        while (!exitLoop) {
             System.out.print("Please enter a credit card number as a long integer: ");
             try {
-                correct = true;
+                exitLoop = true; // Exit loop if input is valid
                 creditCardInput = input.nextLong();
-                if (!(String.valueOf(creditCardInput).length() >= 13
-                        && String.valueOf(creditCardInput).length() <= 16)) {
+                if (!(String.valueOf(creditCardInput).length() >= 13 && String.valueOf(creditCardInput).length() <= 16)) {
                     System.out.println("Invalid input. Please enter an integer between 13 and 16 characters long.");
-                    correct = false;
+                    exitLoop = false; // Keep looping if input is invalid
                 }
-            } catch (Exception e) {
+            } catch (Exception e) { // Catches error when input is not an integer
                 System.out.println("Invalid input. Please enter only integers.");
-                correct = false;
+                exitLoop = false;
                 input.next();
             }
         }
