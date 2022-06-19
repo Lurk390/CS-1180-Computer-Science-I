@@ -48,18 +48,14 @@ public class HW5_PrimeNumbers {
 }
 
 /*
- * A prime number is a number that is only divisible by itself and 1. Write a
- * program
- * that prompts the user for a number n and then displays the first n prime
- * numbers. If
- * the user enters a negative value for n, display the message Error: n cannot
- * be
- * negative. Hint: you probably want to use nested loops. An example is shown
- * below:
- * 
- * What is the value of n? 5
- * 2 3 5 7 11
- * 
- * What is the value of n? -4
- * Error: n cannot be negative
+A prime number is a number that is only divisible by itself and 1. Write a program
+that prompts the user for a number n and then displays the first n prime numbers. If
+the user enters a negative value for n, display the message Error: n cannot be
+negative. Hint: you probably want to use nested loops. An example is shown below:
+
+What is the value of n? 5
+2 3 5 7 11
+
+What is the value of n? -4
+Error: n cannot be negative
  */
