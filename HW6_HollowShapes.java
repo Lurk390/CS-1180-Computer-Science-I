@@ -3,15 +3,24 @@ import java.util.*;
 public class HW6_HollowShapes {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        boolean exitLoop = false;
+        int shape = 0;
 
-        // Prompt for shape input
-        System.out.print("Please choose a shape (1 for square, 2 for circle, 3 for triangle): ");
-        int shape = input.nextInt();
-
-        // Check for valid shape input else reprompt
-        while (!(shape == 1 || shape == 2 || shape == 3)) {
-            System.out.print("Invalid input. Please enter 1, 2, or 3: ");
-            shape = input.nextInt();
+        // Prompt for shape input and check that input is valid else reprompt 
+        while (!exitLoop) {
+            System.out.print("Please choose a shape (1 for square, 2 for circle, 3 for triangle): ");
+            try {
+                exitLoop = true; // Exit loop if input is valid
+                shape = input.nextInt();
+                if (!(shape == 1 || shape == 2 || shape == 3)) {
+                    System.out.println("Invalid input. Please enter 1, 2, or 3.");
+                    exitLoop = false; // Keep looping if input is invalid
+                }
+            } catch (Exception e) {  // Catches error when input is not an integer
+                System.out.println("Invalid input. Please enter 1, 2, or 3.");
+                exitLoop = false;
+                input.next();
+            }
         }
 
         // Check for valid size input else reprompt
@@ -30,15 +39,12 @@ public class HW6_HollowShapes {
         // Print the shape chosen
         if (shape == 1) {
             System.out.println("The hollow square is:");
-            System.out.println();
             printHollowSquare(size, character);
         } else if (shape == 2) {
             System.out.println("The hollow circle is:");
-            System.out.println();
             printHollowCircle(size, character);
         } else if (shape == 3) {
             System.out.println("The hollow triangle is:");
-            System.out.println();
             printHollowTriangle(size, character);
         }
     }
