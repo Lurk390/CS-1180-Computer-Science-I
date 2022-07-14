@@ -1,4 +1,4 @@
-package HW9;
+package HW9_LetsPlay;
 
 public class Player {
     private String name = "";

@@ -1,4 +1,4 @@
-package HW9; 
+package HW9_LetsPlay; 
 
 public class Main {
     public static void main(String[] args) {
