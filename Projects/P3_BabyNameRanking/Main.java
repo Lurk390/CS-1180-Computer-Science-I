@@ -1,7 +1,8 @@
+package P3_BabyNameRanking;
 import java.util.*;
 import java.io.*;
 
-public class P3_BabyNameRanking {
+public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         boolean exitLoop = false;
