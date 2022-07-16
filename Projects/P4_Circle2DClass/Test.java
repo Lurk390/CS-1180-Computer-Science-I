@@ -1,7 +1,16 @@
 package P4_Circle2DClass;
+import java.text.DecimalFormat;
 
 public class Test {
     public static void main(String[] args) {
+        Circle2D circle1 = new Circle2D(2, 2, 5.5);
+        DecimalFormat df = new DecimalFormat("0.00");
+
+        System.out.println("Circle 1 area: " + df.format(circle1.getArea()));
+        System.out.println("Circle 1 perimeter: " + df.format(circle1.getPerimeter()));
+        System.out.println("Point (3, 3) within circle 1: " + circle1.contains(3, 3));
+        System.out.println("Circle 2 within circle 1: " + circle1.contains(new Circle2D(4, 5, 10.5)));
+        System.out.println("Circle 3 overlaps circle 1: " + circle1.overlaps(new Circle2D(3, 5, 2.3)));
     }
 }
 
